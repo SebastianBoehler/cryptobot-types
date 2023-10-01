@@ -1,0 +1,16 @@
+{
+  "name": "cryptobot-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.8.0",
+    "okx-api": "^1.1.3"
+  }
+}
