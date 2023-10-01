@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "types": "types/index.d.ts",
+  "registry": "https://registry.npmjs.org/",
   "scripts": {
     "build": "tsc -b"
   },
