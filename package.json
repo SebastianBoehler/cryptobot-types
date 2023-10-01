@@ -1,6 +1,6 @@
 {
   "name": "cryptobot-types",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "types": "types/index.d.ts",
