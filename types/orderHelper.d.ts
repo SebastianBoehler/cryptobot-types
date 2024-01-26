@@ -31,7 +31,8 @@ export interface BaseOrder {
   ordId: string;
   avgPrice: number;
   fee: number;
-  amountUSD: number;
+  margin: number;
+  lever: number;
   size: number;
   time: Date;
 }
