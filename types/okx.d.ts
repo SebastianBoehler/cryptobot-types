@@ -140,21 +140,3 @@ export type OrderUpdateEvent = Omit<WsDataEvent, "data"> & {
   data: OrderUpdateData[];
   wsKey: string;
 };
-
-export const isTickerUpdateEvent = (
-  event: WsDataEvent
-): event is TickerUpdateEvent => {
-  return event.arg.channel === "tickers";
-};
-
-export const isPositionUpdateEvent = (
-  event: WsDataEvent
-): event is PositionUpdateEvent => {
-  return event.arg.channel === "positions";
-};
-
-export const isOrderUpdateEvent = (
-  event: WsDataEvent
-): event is OrderUpdateEvent => {
-  return event.arg.channel === "orders";
-};
