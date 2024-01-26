@@ -29,6 +29,7 @@ export interface ClosedPosition extends BasePosition, OptionalPositionInfo {
 
 export interface BaseOrder {
   ordId: string;
+  posId?: string;
   avgPrice: number;
   fee: number;
   margin: number;
