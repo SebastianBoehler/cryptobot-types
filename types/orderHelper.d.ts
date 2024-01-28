@@ -36,6 +36,8 @@ export interface BaseOrder {
   lever: number;
   size: number;
   time: Date;
+  posAvgEntryPrice?: number;
+  posValue?: number;
 }
 
 export interface Order extends BaseOrder {
