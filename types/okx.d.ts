@@ -126,6 +126,45 @@ export interface OrderUpdateData {
   msg: string;
 }
 
+export interface BalanceAndPositionUpdateData {
+  pTime: string;
+  eventType:
+    | "snapshot"
+    | "delivered"
+    | "exercised"
+    | "transferred"
+    | "filled"
+    | "liquidation"
+    | "claw_back"
+    | "adl"
+    | "funding_fee"
+    | "adjust_margin"
+    | "set_leverage"
+    | "interest_deduction";
+  balData: {
+    ccy: string;
+    cashBal: string;
+    uTIme: string;
+  };
+  posData: {
+    posId: string;
+    tradeId: string;
+    instId: string;
+    instType: string;
+    mgnMode: string;
+    posSide: string;
+    pos: string;
+    ccy: string;
+    posCcy: string;
+    avgPx: string;
+    uTime: string;
+  };
+  trades: {
+    instId: string;
+    tradeId: string;
+  }[];
+}
+
 export type TickerUpdateEvent = Omit<WsDataEvent, "data"> & {
   data: TickerUpdateData[];
   wsKey: string;
@@ -138,5 +177,10 @@ export type PositionUpdateEvent = Omit<WsDataEvent, "data"> & {
 
 export type OrderUpdateEvent = Omit<WsDataEvent, "data"> & {
   data: OrderUpdateData[];
+  wsKey: string;
+};
+
+export type BalanceAndPositionUpdateEvent = Omit<WsDataEvent, "data"> & {
+  data: BalanceAndPositionUpdateData[];
   wsKey: string;
 };
