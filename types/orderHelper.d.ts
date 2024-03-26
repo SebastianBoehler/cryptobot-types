@@ -1,3 +1,5 @@
+import { PositionSide } from "okx-api";
+
 interface BasePosition {
   symbol: string;
   type: "long" | "short";
@@ -19,6 +21,7 @@ interface OptionalPositionInfo {
 export interface Position extends BasePosition, OptionalPositionInfo {
   unrealizedPnlUSD: number;
   unrealizedPnlPcnt: number;
+  posSide: PositionSide;
 }
 
 export interface ClosedPosition extends BasePosition, OptionalPositionInfo {
@@ -48,4 +51,10 @@ export interface CloseOrder
   extends Pick<Order, Exclude<keyof Order, "action">> {
   action: "close";
   bruttoPnlUSD: number;
+}
+
+//extended order extends T with realizedFee ad realizedPnlUSD
+export interface ExtendedOrder<T extends BaseOrder> extends T {
+  realizedFee: number;
+  realizedPnlUSD: number;
 }
