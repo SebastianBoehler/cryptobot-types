@@ -1,7 +1,7 @@
 {
   "name": "cryptobot-types",
   "version": "1.1.7",
-  "description": "Type package for the cryptobot trading framework",
+  "description": "Type package for the cryptobot trading framework.",
   "types": "types/index.d.ts",
   "registry": "https://registry.npmjs.org/",
   "scripts": {
