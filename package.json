@@ -10,7 +10,7 @@
   "files": [
     "types"
   ],
-  "author": "",
+  "author": "Sebastian Boehler",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^20.8.3",
