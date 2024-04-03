@@ -41,6 +41,7 @@ export interface BaseOrder {
   time: Date;
   posAvgEntryPrice?: number;
   posValue?: number;
+  symbol: string;
 }
 
 export interface Order extends BaseOrder {
