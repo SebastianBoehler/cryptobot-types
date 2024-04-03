@@ -8,7 +8,13 @@ export type Rule = {
   isCorrelationTest?: boolean;
 };
 
-export type Exchanges = "binance" | "coinbase" | "dydx" | "kraken" | "okx";
+export type Exchanges =
+  | "binance"
+  | "coinbase"
+  | "dydx"
+  | "kraken"
+  | "okx"
+  | "bybit";
 
 export type EntryOrderTypes = "Long Entry" | "Short Entry";
 type ExitOrderTypes = "Long Exit" | "Short Exit";
