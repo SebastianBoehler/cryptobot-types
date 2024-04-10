@@ -42,6 +42,7 @@ export interface BaseOrder {
   posAvgEntryPrice?: number;
   posValue?: number;
   symbol: string;
+  accHash: string;
 }
 
 export interface Order extends BaseOrder {

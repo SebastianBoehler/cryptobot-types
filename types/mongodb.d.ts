@@ -16,16 +16,6 @@ export interface Candle {
   start: Date;
 }
 
-export interface GetBacktestOptions {
-  _ids?: string[];
-  testedAfter?: string;
-  rule?: string;
-  minProfit?: number;
-  start?: {
-    $gt: string;
-  };
-}
-
 export interface TimeAndCloseCandle {
   start: Date;
   close: number;
@@ -39,4 +29,25 @@ export interface DatabaseType {
   low: string;
   close: string;
   volume: string;
+}
+
+export interface BacktestingResult {
+  trades: number;
+  identifier: string;
+  name: string;
+  startCapital: number;
+  symbol: string;
+  margin: number;
+  orders: (CloseOrder | Order)[];
+  pnl: number;
+  winRatio: number;
+  stringifiedFunc: string;
+  time: Date;
+  start: Date;
+  end: Date;
+  pnl_pct: number;
+  hodl_pct: number;
+  liquidations: number;
+  exchange: string;
+  hodl_ratio: number;
 }
