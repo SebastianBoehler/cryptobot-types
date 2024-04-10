@@ -11,6 +11,7 @@ interface BasePosition {
   fee: number;
   orders: (Order | CloseOrder)[];
   amountUSD: number;
+  accHash: string;
 }
 
 interface OptionalPositionInfo {
