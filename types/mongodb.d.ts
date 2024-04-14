@@ -51,3 +51,17 @@ export interface BacktestingResult {
   exchange: string;
   hodl_ratio: number;
 }
+
+export interface LivePosition extends Position {
+  posId: string;
+  realizedPnlUSD: number;
+  unrealizedPnlUSD: number;
+  strategy: {
+    name: string;
+    startCapital: number;
+  };
+  profitUSD: number;
+  exchange: string;
+  accHash: string;
+  timestamp: string;
+}
