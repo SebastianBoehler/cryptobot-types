@@ -59,6 +59,7 @@ export interface LivePosition extends Position {
   strategy: {
     name: string;
     startCapital: number;
+    multiplier: number;
   };
   profitUSD: number;
   exchange: string;
