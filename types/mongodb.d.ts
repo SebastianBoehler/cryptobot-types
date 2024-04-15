@@ -1,3 +1,5 @@
+import { Position } from "./orderHelper";
+
 export interface GeneratedCandle {
   open: string;
   high: string;
@@ -65,7 +67,7 @@ export interface MongoLivePosition extends Position {
   profitUSD: number;
   exchange: string;
   accHash: string;
-  timestamp: string;
+  timestamp: Date;
 }
 
 export interface TraderAction {
