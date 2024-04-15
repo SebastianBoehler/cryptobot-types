@@ -52,8 +52,9 @@ export interface BacktestingResult {
   hodl_ratio: number;
 }
 
-export interface LivePosition extends Position {
+export interface MongoLivePosition extends Position {
   posId: string;
+  env: string;
   realizedPnlUSD: number;
   unrealizedPnlUSD: number;
   strategy: {
@@ -65,4 +66,14 @@ export interface LivePosition extends Position {
   exchange: string;
   accHash: string;
   timestamp: string;
+}
+
+export interface TraderAction {
+  symbol: string;
+  posId: string;
+  accHash: string;
+  time: Date;
+  action: string;
+  prev: string | number;
+  after: string | number;
 }
