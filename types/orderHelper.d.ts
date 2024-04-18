@@ -1,4 +1,5 @@
 import { PositionSide } from "okx-api";
+import { Indicators } from "./indicators";
 
 interface BasePosition {
   symbol: string;
@@ -17,6 +18,7 @@ interface BasePosition {
 interface OptionalPositionInfo {
   lowestPrice?: number;
   highestPrice?: number;
+  maxDrawdown?: number;
 }
 
 export interface Position extends BasePosition, OptionalPositionInfo {
@@ -44,6 +46,7 @@ export interface BaseOrder {
   posValue?: number;
   symbol: string;
   accHash: string;
+  indicators?: Indicators[];
 }
 
 export interface Order extends BaseOrder {
