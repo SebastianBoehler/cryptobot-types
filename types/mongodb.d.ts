@@ -52,6 +52,7 @@ export interface BacktestingResult {
   liquidations: number;
   exchange: string;
   hodl_ratio: number;
+  maxDrawdown: number;
 }
 
 export interface MongoLivePosition extends Position {
@@ -75,6 +76,7 @@ export interface TraderAction {
   posId: string;
   accHash: string;
   time: Date;
+  price: number;
   action: string;
   prev: string | number;
   after: string | number;
