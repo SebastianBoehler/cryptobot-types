@@ -25,6 +25,7 @@ export interface Position extends BasePosition, OptionalPositionInfo {
   unrealizedPnlUSD: number;
   unrealizedPnlPcnt: number;
   posSide: PositionSide;
+  posIdx: number;
 }
 
 export interface ClosedPosition extends BasePosition, OptionalPositionInfo {
