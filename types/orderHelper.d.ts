@@ -13,6 +13,7 @@ interface BasePosition {
   orders: (Order | CloseOrder)[];
   amountUSD: number;
   accHash: string;
+  posIdx: number;
 }
 
 interface OptionalPositionInfo {
@@ -25,7 +26,6 @@ export interface Position extends BasePosition, OptionalPositionInfo {
   unrealizedPnlUSD: number;
   unrealizedPnlPcnt: number;
   posSide: PositionSide;
-  posIdx: number;
 }
 
 export interface ClosedPosition extends BasePosition, OptionalPositionInfo {
