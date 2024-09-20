@@ -40,7 +40,6 @@ export interface BacktestingResult {
   startCapital: number;
   symbol: string;
   margin: number;
-  orders: (CloseOrder | Order)[];
   pnl: number;
   winRatio: number;
   stringifiedFunc: string;
@@ -53,6 +52,15 @@ export interface BacktestingResult {
   exchange: string;
   hodl_ratio: number;
   maxDrawdown: number;
+  sharpeRatio: number;
+  sortinoRatio: number;
+  calmarRatio: number;
+  maxConsecutiveLosses: number;
+  annualizedReturn: number;
+  //TODO: not present anymore but keep it for now for compatibility
+  orders?: (CloseOrder | Order)[];
+  // to make easier changes, remove it when done
+  [key: string]: unknown;
 }
 
 export interface MongoLivePosition extends Position {
