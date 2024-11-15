@@ -1,4 +1,5 @@
 import { Position } from "./orderHelper";
+import { OrderType } from "okx-api";
 
 export interface GeneratedCandle {
   open: string;
@@ -18,12 +19,6 @@ export interface Candle {
   start: Date;
 }
 
-export interface TimeAndCloseCandle {
-  start: Date;
-  close: number;
-  volume: number;
-}
-
 export interface DatabaseType {
   start: Date;
   open: string;
@@ -31,52 +26,6 @@ export interface DatabaseType {
   low: string;
   close: string;
   volume: string;
-}
-
-export interface BacktestingResult {
-  trades: number;
-  identifier: string;
-  name: string;
-  startCapital: number;
-  symbol: string;
-  margin: number;
-  pnl: number;
-  winRatio: number;
-  stringifiedFunc: string;
-  time: Date;
-  start: Date;
-  end: Date;
-  pnl_pct: number;
-  hodl_pct: number;
-  liquidations: number;
-  exchange: string;
-  hodl_ratio: number;
-  maxDrawdown: number;
-  sharpeRatio: number;
-  sortinoRatio: number;
-  calmarRatio: number;
-  maxConsecutiveLosses: number;
-  annualizedReturn: number;
-  //TODO: not present anymore but keep it for now for compatibility
-  orders?: (CloseOrder | Order)[];
-  // to make easier changes, remove it when done
-  [key: string]: unknown;
-}
-
-export interface MongoLivePosition extends Position {
-  posId: string;
-  env: string;
-  realizedPnlUSD: number;
-  unrealizedPnlUSD: number;
-  strategy: {
-    name: string;
-    startCapital: number;
-    multiplier: number;
-  };
-  profitUSD: number;
-  exchange: string;
-  accHash: string;
-  timestamp: Date;
 }
 
 export interface TraderAction {
@@ -88,4 +37,34 @@ export interface TraderAction {
   action: string;
   prev: string | number;
   after: string | number;
+}
+
+export interface DatabaseCandleType {
+  high: string;
+  low: string;
+  open: string;
+  close: string;
+  volume: string;
+  start: Date;
+}
+
+export interface DatabaseOpenOrderType {
+  orderId: string;
+  clOrdId: string;
+  symbol: string;
+  status: string;
+  type: "open";
+  orderType: OrderType;
+  direction: "long" | "short";
+  size: number;
+  price: number;
+  fee: number;
+  acc: string;
+  time: Date;
+}
+
+export interface DatabaseClosedOrderType
+  extends Omit<DatabaseOpenOrderType, "type"> {
+  type: "close";
+  pnl: number;
 }
