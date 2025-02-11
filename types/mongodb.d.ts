@@ -33,6 +33,7 @@ export interface TraderAction {
   posId: string;
   accHash: string;
   time: Date;
+  side: "long" | "short";
   price: number;
   action: string;
   prev: string | number;
