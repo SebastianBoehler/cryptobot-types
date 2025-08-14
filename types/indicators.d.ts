@@ -20,4 +20,6 @@ export interface Indicators {
     buckets: number[];
     poc: { low: number; high: number } | null;
   };
+  // for the sacke of easy to add more indicators
+  [key: string]: any;
 }
