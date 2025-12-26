@@ -1,5 +1,4 @@
 import { Position } from "./orderHelper";
-import { OrderType } from "okx-api";
 
 export interface GeneratedCandle {
   open: string;
@@ -55,7 +54,7 @@ export interface DatabaseOpenOrderType {
   symbol: string;
   status: string;
   type: "open";
-  orderType: OrderType;
+  orderType: "market" | "limit";
   direction: "long" | "short";
   size: number;
   price: number;
