@@ -31,7 +31,7 @@ export interface DatabaseType {
 export interface TraderAction {
   symbol: string;
   posId: string;
-  accHash: string;
+  UID: string;
   time: Date;
   side: "long" | "short";
   price: number;
@@ -60,12 +60,11 @@ export interface DatabaseOpenOrderType {
   size: number;
   price: number;
   fee: number;
-  acc: string;
+  UID: string;
   time: Date;
 }
 
-export interface DatabaseClosedOrderType
-  extends Omit<DatabaseOpenOrderType, "type"> {
+export interface DatabaseClosedOrderType extends Omit<DatabaseOpenOrderType, "type"> {
   type: "close";
   pnl: number;
 }

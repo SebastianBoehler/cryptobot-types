@@ -10,7 +10,7 @@ interface BasePosition {
   avgEntryPrice: number;
   liquidationPrice: number;
   fee: number;
-  accHash: string;
+  UID: string;
 }
 
 interface OptionalPositionInfo {
